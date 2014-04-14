@@ -11,8 +11,8 @@ end
 
 post '/' do
   p params
-  stmt = db.prepare("INSERT INTO posts (body) VALUES (?)")
-  stmt.bind_params(params["text"])
+  stmt = db.prepare("INSERT INTO posts (title, body) VALUES (?, ?)")
+  stmt.bind_params(params["title"], params["text"])
   stmt.execute
   redirect '/'
 end
