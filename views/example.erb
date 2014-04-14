@@ -24,6 +24,7 @@
 
       <% posts.each do |post| %>
        <div>
+         <%= escape_html(post["title"]) %>
          <%= escape_html(post["body"]) %>
        </div>
       <% end %>
