@@ -9,6 +9,10 @@ get '/' do
   erb :example, { :locals => { :posts => posts } }
 end
 
-get '/example' do
-  erb :example
+post '/' do
+  p params
+  stmt = db.prepare("INSERT INTO posts (body) VALUES (?)")
+  stmt.bind_params(params["text"])
+  stmt.execute
+  redirect '/'
 end
