@@ -29,8 +29,8 @@ post '/' do
   	  f.write params["file"][:tempfile].read
     end
   end
-  stmt = db.prepare("INSERT INTO posts (title, body, filename, updated) VALUES (?, ?, ?, datetime('now', '+09:00:00'))")
-  stmt.bind_params(params["title"], params["text"], file_name)
+  stmt = db.prepare("INSERT INTO posts (username, title, body, filename, updated) VALUES (?, ?, ?, ?, datetime('now', '+09:00:00'))")
+  stmt.bind_params(params["username"], params["title"], params["text"], file_name)
   stmt.execute
   redirect '/'
 end
