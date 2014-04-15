@@ -13,6 +13,7 @@ end
 
 post '/' do
   pp params
+  file_name = ""
   if params["file"]
   	ext = ""
   	if params["file"][:type].include? "jpeg"
@@ -28,8 +29,8 @@ post '/' do
   	  f.write params["file"][:tempfile].read
     end
   end
-  stmt = db.prepare("INSERT INTO posts (title, body, updated) VALUES (?, ?, datetime('now', '+09:00:00'))")
-  stmt.bind_params(params["title"], params["text"])
+  stmt = db.prepare("INSERT INTO posts (title, body, filename, updated) VALUES (?, ?, ?, datetime('now', '+09:00:00'))")
+  stmt.bind_params(params["title"], params["text"], file_name)
   stmt.execute
   redirect '/'
 end
