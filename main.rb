@@ -11,7 +11,7 @@ end
 
 post '/' do
   p params
-  stmt = db.prepare("INSERT INTO posts (title, body) VALUES (?, ?)")
+  stmt = db.prepare("INSERT INTO posts (title, body, updated) VALUES (?, ?, datetime('now', '+09:00:00'))")
   stmt.bind_params(params["title"], params["text"])
   stmt.execute
   redirect '/'
