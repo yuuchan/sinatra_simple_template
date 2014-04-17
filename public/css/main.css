@@ -1,0 +1,51 @@
+/*reset*/
+html, body, div, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+addres, ul, ol, dl, dt, dd, table, th, td, form, fieldset {
+	margin: 0;
+	padding: 0;
+	line-height: 1.0;
+	font-family: "Hiragino Kaku Gothic ProN", meiryo, sans-serif;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+ul,ol {
+	list-style: none;/*黒丸を消す*/
+}
+a {
+	text-decoration: none;/*下線を消す*/
+}
+img {
+	border: 0;
+}
+ing,input {
+	vertical-aligin: bottom;
+}
+
+/*---main---*/
+.contents {
+	margin: auto;
+	height: 100%;
+	width: 100%;
+}
+.details {
+	margin: auto;
+	height: 100%;
+	width: 640px;
+}
+.post {
+	min-height: 200px;
+	width: 600px;
+	margin: 10px auto;
+	background-color: #b7b7b7;
+}
+.post img {
+	max-height: 200px;
+	max-width: 200px;
+}
+.images {
+	margin: auto;
+	text-align: center;
+}
+

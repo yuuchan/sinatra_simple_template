@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>sample</title>
-    <link href="/css/main.css" media="screen" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <div>
-      <p>こんにちは</p>
-      <%= escape_html("<script>alert('sample')</script>") %>
-      <p>
-      <% if 3 % 2 == 1 %>
-      ここは表示される
-      <% else %>
-      ここは表示されない
-      <% end %>
+<head>
+  <meta charset="utf-8" />
+  <title>sample</title>
+  <link href="/css/main.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <!--contents-->
+  <div class="contents">
 
-      <form method="post" action="/" enctype="multipart/form-data">
-        <input type="file" name="file" value="file">
-        <input type="text" name="username">
-        <input type="text" name="title">
-        <textarea rows="10" cols="10" name="text"></textarea>
-        <input type="submit" name="submit" value="投稿">
-      </form>
-
-      <% posts.each do |post| %>
+    <!--details-->
+    <div class="details">
+      <form class="submit" method="post" action="/" enctype="multipart/form-data">
        <div>
-         <%= escape_html(post["title"]) %>
-         <%= escape_html(post["body"]) %>
+         <label for="username">username</label>
+         <input id="username" type="text" name="username">
        </div>
-      <% end %>
-      </p>
-    </div>
-  </body>
+       <div>
+         <label for="title">title</label>
+         <input id="title" type="text" name="title">
+       </div>
+       <div>
+         <label for="comment">comment</p>
+           <textarea id="comment" rows="10" cols="10" name="text"></textarea>
+         </div>
+         <div><input type="file" name="file" value="file"></div>
+         <div><input type="submit" name="submit" value="投稿"></div>
+       </form>
+     </div>
+     <!--/details-->
+
+     <!--details-->
+     <div class="details">
+      <% posts.each do |post| %>
+      <div class="post">
+       <div><%= escape_html(post["title"]) %></div>
+       <div class="images"><img src="img/<%= post["filename"] %>" alt="画像"></div>
+       <div><%= escape_html(post["username"]) %></div>
+       <div><%= escape_html(post["body"]) %></div>
+     </div>
+     <% end %>
+   </div>
+   <!--/details-->
+
+ </div>
+ <!--/contents-->
+</body>
 </html>
