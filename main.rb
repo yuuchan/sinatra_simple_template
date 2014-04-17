@@ -26,10 +26,11 @@ post '/' do
     File.open(save_path,'wb') do |f|
       f.write params["file"][:tempfile].read
     end
+    stmt = db.prepare("INSERT INTO posts (username, title, body, filename, updated) VALUES (?, ?, ?, ?, datetime('now', '+09:00:00'))")
+    stmt.bind_params(params["username"], params["title"], params["text"], file_name)
+    stmt.execute
+    redirect '/'
+  else
+    return "画像が必要です。"
   end
-
-  stmt = db.prepare("INSERT INTO posts (username, title, body, filename, updated) VALUES (?, ?, ?, ?, datetime('now', '+09:00:00'))")
-  stmt.bind_params(params["username"], params["title"], params["text"], file_name)
-  stmt.execute
-  redirect '/'
 end
