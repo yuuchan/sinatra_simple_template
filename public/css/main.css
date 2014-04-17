@@ -58,6 +58,7 @@ img,input {
 	padding: 10px 10px 0 10px;
 	width: 580px;
 	margin: auto;
+	box-shadow: 5px 5px 5px #CFCECE;
 }
 .input_form {
 	border-top: 0;
@@ -111,6 +112,7 @@ img,input {
 	width: 600px;
 	margin: 10px auto;
 	background-color: #ffffff;
+	box-shadow: 5px 5px 5px #CFCECE;
 }
 .images img {
 	max-height: 350px;
