@@ -11,22 +11,23 @@
 
     <!--details-->
     <div class="details">
-      <form class="submit" method="post" action="/" enctype="multipart/form-data">
+      <div class="submit_form">
+      <form method="post" action="/" enctype="multipart/form-data">
        <div>
-         <label for="username">username</label>
-         <input id="username" type="text" name="username">
+         <input id="username" class="input_form" type="text" name="username" size="110" placeholder="username">
        </div>
        <div>
-         <label for="title">title</label>
-         <input id="title" type="text" name="title">
+         <input id="title" class="input_form" type="text" name="title"  size="110" placeholder="title">
        </div>
        <div>
-         <label for="comment">comment</p>
-           <textarea id="comment" rows="10" cols="10" name="text"></textarea>
+         <textarea id="comment" rows="10" cols="79" name="text" placeholder="comment"></textarea>
          </div>
-         <div><input type="file" name="file" value="file"></div>
-         <div><input type="submit" name="submit" value="投稿"></div>
+         <div class="btn_area">
+          <div class="file_btn"><input type="file" name="file" value="file"></div>
+          <div class="submit_btn"><input type="submit" name="submit" value="投稿"></div>
+         </div>
        </form>
+       </div>
      </div>
      <!--/details-->
 
@@ -34,10 +35,12 @@
      <div class="details">
       <% posts.each do |post| %>
       <div class="post">
+       <div class="means">
        <div><%= escape_html(post["title"]) %></div>
-       <div class="images"><img src="img/<%= post["filename"] %>" alt="画像"></div>
        <div><%= escape_html(post["username"]) %></div>
+       <div class="images"><img src="img/<%= post["filename"] %>" alt="画像"></div>
        <div><%= escape_html(post["body"]) %></div>
+       </div>
      </div>
      <% end %>
    </div>

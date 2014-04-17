@@ -1,6 +1,6 @@
 /*reset*/
 html, body, div, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-addres, ul, ol, dl, dt, dd, table, th, td, form, fieldset {
+address, ul, ol, dl, dt, dd, table, th, td, form, fieldset {
 	margin: 0;
 	padding: 0;
 	line-height: 1.0;
@@ -19,7 +19,7 @@ a {
 img {
 	border: 0;
 }
-ing,input {
+img,input {
 	vertical-aligin: bottom;
 }
 
@@ -28,17 +28,67 @@ ing,input {
 	margin: auto;
 	height: 100%;
 	width: 100%;
+	background-color: #efefed;
 }
 .details {
 	margin: auto;
+	padding: 10px 0;
 	height: 100%;
 	width: 640px;
+	clear: both;
+}
+.btn_area {
+	background-color: #ffffff;
+	height: 40px;
+}
+.btn_area {
+	background-color: #FC7271;
+	width: 600px;
+	position: relative;
+	left: -10px;
+}
+.btn_area input {
+	border-style: none;
+	background-color: #ffffff;
+	margin: 10px;
+}
+.submit_form {
+	background-color: #ffffff;
+	padding: 10px 10px 0 10px;
+	width: 580px;
+	margin: auto;
+}
+.input_form {
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #d1d1d1;
+	outline: none;
+	height: 24px;
+}
+.submit_form textarea {
+	border: 0px;
+	outline: none;
+}
+.file_btn {
+	width: 390px;
+	float: left;
+}
+.submit_btn {
+	width: 30px;
+	float: right;
+	right: 25px;
+	position: relative;
+}
+.means {
+	padding: 20px;
 }
 .post {
+	border: 1px solid #59C7B8;
 	min-height: 200px;
 	width: 600px;
 	margin: 10px auto;
-	background-color: #b7b7b7;
+	background-color: #ffffff;
 }
 .post img {
 	max-height: 200px;
