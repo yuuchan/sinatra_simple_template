@@ -5,6 +5,7 @@ address, ul, ol, dl, dt, dd, table, th, td, form, fieldset {
 	padding: 0;
 	line-height: 1.0;
 	font-family: "Hiragino Kaku Gothic ProN", meiryo, sans-serif;
+	font-size: 12px;
 }
 table {
 	border-collapse: collapse;
@@ -49,8 +50,8 @@ img,input {
 }
 .btn_area input {
 	border-style: none;
-	background-color: #ffffff;
 	margin: 10px;
+	color: #ffffff;
 }
 .submit_form {
 	background-color: #ffffff;
@@ -80,8 +81,29 @@ img,input {
 	right: 25px;
 	position: relative;
 }
+.submit_btn input {
+	background-color: #ffffff;
+	color: #FC7271;
+}
 .means {
 	padding: 20px;
+}
+.entry_title{
+	font-size: 14px;
+	font-weight: bold;
+}
+.entry_username{
+	margin: 10px 0;
+	color: #bfbfbf;
+}
+.entry_username img {
+	margin: 0 6px -4px 0;
+}
+.username {
+	margin: 0 10px;
+}
+.entry_body {
+	margin: 10px 0 0 0;
 }
 .post {
 	border: 1px solid #59C7B8;
@@ -90,9 +112,9 @@ img,input {
 	margin: 10px auto;
 	background-color: #ffffff;
 }
-.post img {
-	max-height: 200px;
-	max-width: 200px;
+.images img {
+	max-height: 350px;
+	max-width: 560px;
 }
 .images {
 	margin: auto;

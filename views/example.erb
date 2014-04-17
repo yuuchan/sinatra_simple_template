@@ -36,10 +36,12 @@
       <% posts.each do |post| %>
       <div class="post">
        <div class="means">
-       <div><%= escape_html(post["title"]) %></div>
-       <div><%= escape_html(post["username"]) %></div>
-       <div class="images"><img src="img/<%= post["filename"] %>" alt="画像"></div>
-       <div><%= escape_html(post["body"]) %></div>
+       <div class="entry_title"><%= escape_html(post["title"]) %></div>
+       <div class="entry_username">
+          <img src='/images/user.png' alt="user" width="18px"><%= escape_html(post["username"]) %>
+       </div>
+       <div class="images"><img src="img/<%= post["filename"] %>" alt="<%= escape_html(post["title"]) %>"></div>
+       <div class="entry_body"><%= escape_html(post["body"]) %></div>
        </div>
      </div>
      <% end %>
